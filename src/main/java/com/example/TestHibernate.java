@@ -24,7 +24,7 @@ public class TestHibernate {
     }
 
     // тестовый метод для круд с описанной сущностью в xml. Вроде как древний способ
-    // обращение к базе через SQL запросы
+    // работа с базой с помощью SQL запросов
     private static void userTest() {
         UserDao userDao = new UserDao();
 
@@ -67,7 +67,7 @@ public class TestHibernate {
     }
 
     // круд для сущности с аннотациями
-    // обращение к базе с помощью HQL запросов
+    // работа с базой с помощью HQL запросов
     private static void itemTest() {
         ItemDao itemDao = new ItemDao();
 
@@ -118,6 +118,8 @@ public class TestHibernate {
         System.out.println(itemListAfterDelete);
     }
 
+    // круд для сущности с аннотациями
+    // работа с базой с помощью методов интерфейса Session
     private static void customerTest() {
         CustomerDao customerDao = new CustomerDao();
 
