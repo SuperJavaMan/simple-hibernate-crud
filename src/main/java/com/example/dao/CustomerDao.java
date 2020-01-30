@@ -2,6 +2,7 @@ package com.example.dao;
 
 import com.example.model.Customer;
 import com.example.utils.AnnotationSessionFactoryProvider;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -21,7 +22,8 @@ public class CustomerDao {
         try {
             session = AnnotationSessionFactoryProvider.getSessionFactory().openSession();
 
-            customerList = session.createQuery("From Customer").list();
+            Criteria criteria = session.createCriteria(Customer.class);
+            customerList = criteria.list();
 
         } catch (Exception e) {
             e.printStackTrace();
